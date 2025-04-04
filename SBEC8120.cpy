@@ -1,3 +1,4 @@
+       Alterado Pelo Ivan em 01/04/2025.
        Alterado Pelo Ivan em 28/03/2025.
       *----------------------------------------------------------------*
        81000-LER-HFS.
@@ -9,13 +10,20 @@
 
             MOVE SPACES                         TO W81-REG
 
-            IF W81-IS = 1
+            IF W81-IS = 1 OR W81-IS = 5
                MOVE ZEROS                       TO W81-VETOR-T99
             END-IF
 
             IF W81-IS = 1
                MOVE W81-STR (W81-IS:02)         TO W81-TIP
                MOVE 2                           TO C2EBCDIC-LEN
+               MOVE W81-TIP                     TO C2EBCDIC-CAMPO
+               CALL C2EBCDIC USING C2EBCDIC-PARM
+               MOVE C2EBCDIC-CAMPO (01:02)      TO W81-TIP
+            ELSE
+            IF W81-IS = 5
+               MOVE W81-STR (W81-IS:02)         TO W81-TIP
+               MOVE 5                           TO C2EBCDIC-LEN
                MOVE W81-TIP                     TO C2EBCDIC-CAMPO
                CALL C2EBCDIC USING C2EBCDIC-PARM
                MOVE C2EBCDIC-CAMPO (01:02)      TO W81-TIP
