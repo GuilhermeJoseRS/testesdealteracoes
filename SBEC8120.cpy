@@ -1,7 +1,11 @@
+       Alterado hoje por Guilherme Souza.
 
       *----------------------------------------------------------------*
        81000-LER-HFS.
       *----------------------------------------------------------------*
+
+            Alterado pelo Guilherme Souza em 04/04/2025.
+
 
            MOVE PA61-OPC-DIS                    TO W81-DISPLAY
 
